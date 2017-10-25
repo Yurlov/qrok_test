@@ -1,6 +1,6 @@
 # qrok_test
 
-Spring Security with (Basic Auth) (user = "viktor" password = "12345678")  SecurityConfig.class
+I took Spring Security with (Basic Auth) (user = "viktor" password = "12345678") !                               
 first of all change db-setting in application.properties
 
 cUrl tests (Tested by POSTMAN) :
