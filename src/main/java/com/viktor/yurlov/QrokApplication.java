@@ -1,7 +1,7 @@
 package com.viktor.yurlov;
 
-import com.viktor.yurlov.services.AuthorService;
-import com.viktor.yurlov.services.BookService;
+import com.viktor.yurlov.service.AuthorService;
+import com.viktor.yurlov.service.BookService;
 import com.viktor.yurlov.util.Utils;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,11 +17,9 @@ public class QrokApplication {
     }
 
     @Bean
-    public CommandLineRunner demo(final BookService bookService, final AuthorService authorService) {
+    public CommandLineRunner startUp(final BookService bookService, final AuthorService authorService) {
         return strings -> {
             Utils.fillDB().forEach(bookService::saveBook);
-            authorService.updateAuthor(Utils.addReward(authorService.getAuthorById(1L)));
-            authorService.updateAuthor(Utils.addReward(authorService.getAuthorById(3L)));
         };
     }
 }
